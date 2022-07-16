@@ -1,0 +1,10 @@
+spring:
+  cache:
+    jcache:
+      config: classpath:ehcache.xml
+
+  mvc:
+    throw-exception-if-no-handler-found: true
+  web:
+    resources:
+      add-mappings: false

@@ -1,0 +1,77 @@
+= Shopping-Category
+:doctype: book
+:icons: font
+:source-highlighter: highlightjs
+:toc: left
+:toclevels: 2
+:sectlinks:
+
+[[OVERVIEW]]
+== Overview
+
+[[OVERVIEW-HOST]]
+===  HOST
+
+|===
+| 환경 | HOST
+| DOCKER
+| http://localhost/
+
+| LOCAL
+| http://localhost:8080/
+|===
+
+[[OVERVIEW-RESPONSE-CODE]]
+=== RESPONSE CODE
+
+|===
+| CODE | MESSAGE | DESCRIPTION
+| `200`
+| OK
+| 성공
+
+| `400`
+| Bad Request
+| 잘못된 요청
+
+| `404`
+| Not Found
+| 존재하지 않는 요청 리소스
+
+| `500`
+| Internal Server Error
+| 서버 에러
+
+| `1001`
+| Data Not Found
+| 등록된 데이터 찾지 못함
+
+| `1002`
+| Category Already Exist
+| 현재 Depth 에 등록된 카테고리 이름 이미 존재
+
+|===
+
+[[CATEGORY-API]]
+== CATEGORY API
+
+[[CATEGORY-API-SEARCH]]
+=== 카테고리 조회
+
+operation::search-category[snippets='curl-request,http-request,request-headers,request-parameters,http-response,response-body,response-fields,response-headers']
+
+[[CATEGORY-API-ADD]]
+=== 카테고리 등록
+
+operation::add-category[snippets='curl-request,http-request,request-headers,request-fields,http-response,response-body,response-fields,response-headers']
+
+[[CATEGORY-API-UPDATE]]
+=== 카테고리 수정 (카테고리 이름 수정)
+
+operation::update-category[snippets='curl-request,http-request,request-headers,path-parameters,request-fields,http-response,response-body,response-fields,response-headers']
+
+[[CATEGORY-API-DELETE]]
+=== 카테고리 삭제
+카테고리 삭제시 하위 카테고리 모두 삭제
+
+operation::delete-category[snippets='curl-request,http-request,request-headers,path-parameters,http-response,response-body,response-fields,response-headers']

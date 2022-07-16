@@ -1,0 +1,35 @@
+spring:
+  config:
+    activate:
+      on-profile: local
+
+  sql:
+    init:
+      mode: never
+
+  datasource:
+    driver-class-name: org.h2.Driver
+    url: jdbc:h2:mem:test;MODE=MySQL;
+    username: SA
+    password:
+
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: create
+
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.MySQL8Dialect
+        storage_engine: innodb
+
+logging:
+  level:
+    org.hibernate.SQL: debug
+    org.hibernate.type: trace

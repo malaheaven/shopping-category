@@ -1,16 +1,17 @@
 package com.musinsa.shoppingcategory.dto;
 
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import lombok.*;
 import org.jetbrains.annotations.Nullable;
 
 import javax.validation.constraints.NotEmpty;
 
 
 @Getter
-@Setter
+@Builder
+@AllArgsConstructor
 @NoArgsConstructor
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class RequestDto {
 
     @Nullable

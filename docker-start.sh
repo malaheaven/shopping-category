@@ -1,6 +1,7 @@
 rm -rf ./docker/db/  # remove docker volume directory
 ./gradlew clean      # spring boot build clean
-./gradlew bootJar    # spring boot bootJar
+./gradlew build      # spring boot build
+./gradlew bootJar    # spring boot bootJar -> spring rest docs index.html 생성을 위해
 
 cd docker/           # move docker directory
 

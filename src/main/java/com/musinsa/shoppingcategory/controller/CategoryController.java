@@ -5,12 +5,14 @@ import com.musinsa.shoppingcategory.dto.RequestDto;
 import com.musinsa.shoppingcategory.service.CategoryService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 
 @Slf4j
 @RestController
+@RequestMapping(produces = MediaType.APPLICATION_JSON_VALUE)
 @RequiredArgsConstructor
 public class CategoryController {
 

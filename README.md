@@ -22,9 +22,10 @@ sh local-start.sh
 ```
 # local-start.sh description
 
-./gradlew bootJar                                                             # spring boot bootJar
-cd build/libs/                                                                # move build/libs/
-java -Dspring.profiles.active=local -jar shopping-category-0.0.1-SNAPSHOT.jar # start local spring boot  
+./gradlew build                     # spring boot build
+./gradlew bootJar                   # spring boot bootJar -> spring rest docs index.html 생성을 위해
+cd build/libs/                      # move build/libs/
+java -Dspring.profiles.active=local -jar shopping-category-0.0.1-SNAPSHOT.jar # start local spring boot
 ```
 
 ##### Health Check
@@ -64,7 +65,8 @@ sh docker-start.sh
 
 rm -rf ./docker/db/  # remove docker volume directory
 ./gradlew clean      # spring boot build clean
-./gradlew bootJar    # spring boot bootJar
+./gradlew build      # spring boot build
+./gradlew bootJar    # spring boot bootJar -> spring rest docs index.html 생성을 위해
 
 cd docker/           # move docker directory
 
@@ -82,6 +84,8 @@ curl --location --request GET 'http://localhost/health'
 ```
 OK
 ```
+--- 
+
 ### 개발 문서
 - TimeZone : UTC
 ```
@@ -90,6 +94,18 @@ OK
         TimeZone.setDefault(TimeZone.getTimeZone("UTC"));
   }
 ```
+#### ERD
+[ERD wiki 바로가기](https://github.com/malaheaven/shopping-category/wiki/ERD)
+
+#### Docs
+Spring REST Docs 적용
+
+- [Docs wiki 바로가기](https://github.com/malaheaven/shopping-category/wiki/Docs)
+
+|환경|url|ETC|
+|---|----|---|
+|Docker|http://localhost/docs/index.html| Docker로 실행하면 해당 URL|
+|Local|http://localhost:8080/docs/index.html||
 
 #### Version
 
@@ -99,8 +115,6 @@ OK
 |DBMS|MySQL|8.0| Docker 에서 사용|
 |Language|JAVA|11||
 |Framework|Spring Boot |2.7.1||
-
----
 
 #### DDL
 - resources/schema.sql
@@ -128,6 +142,8 @@ create table if not exists musinsa.category
 );
 
 ```
+--- 
+
 ### 개발 방식
 
 ##### Branch 규칙

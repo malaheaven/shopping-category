@@ -14,7 +14,7 @@ public class BaseConfig {
 
     @Configuration
     @EnableCaching
-    public static class cacheConfig {
+    public static class CacheConfig {
 
     }
 }
